@@ -1,0 +1,11 @@
+{
+  "app": "BeautyWeapon",
+  "version": "7.1.1",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v7.1.1/BeautyWeapon-v7.1.1-windows-x64.zip",
+  "bytes": 183591345,
+  "sha256": "a9515c25ee336504762d53c2bd498eae9d0479d1c9ed967fbec998d604f531c2",
+  "root": "美丽武器V7.1.1_完整包",
+  "launcher": "美丽武器V7.1.1.exe",
+  "extensionVersion": "7.1.1",
+  "notes": "读取用户后随机使用所有未归档模板；新增模板自动加入，缺少素材的模板跳过，直播画面显示本次模板。修复网页助手连接地址和连接版本判断；保留旧版更新、NDM下载和无控制台合成。请在浏览器加载本版网页助手。"
+}
