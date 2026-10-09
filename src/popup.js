@@ -1,0 +1,4 @@
+const statusBox=document.querySelector('#status'),auto=document.querySelector('#auto');
+async function refresh(){const saved=await chrome.storage.local.get({autoPush:true,readState:null,connectionError:''});auto.checked=saved.autoPush!==false;try{const d=await fetch('http://127.0.0.1:38560/api/assistant-state',{cache:'no-store'}).then(r=>r.json());if(!/^7\./.test(String(d.version||'')))throw Error();statusBox.textContent='V7.1.1 已连接\n'+(saved.connectionError||saved.readState?.detail||'请打开抖音用户主页');}catch{statusBox.textContent='尚未连接 V7.1.1。请先启动美丽武器V7.1.1.exe。';}statusBox.style.whiteSpace='pre-line';}
+auto.onchange=async()=>{await chrome.storage.local.set({autoPush:auto.checked});if(auto.checked)chrome.runtime.sendMessage({type:'BW7_SYNC'});};
+document.querySelector('#retry').onclick=async()=>{statusBox.textContent='正在重新读取…';const r=await chrome.runtime.sendMessage({type:'BW7_SYNC'});if(r?.error)statusBox.textContent=r.error;else refresh();};refresh();
