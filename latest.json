@@ -1,11 +1,11 @@
 {
   "app": "BeautyWeapon",
-  "version": "8.1.0",
-  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.0/BeautyWeapon-v8.1.0-windows-x64.zip",
-  "bytes": 185684384,
-  "sha256": "9bf5cefd8b1430391d7838e3566d73d68919cec72261e44960442c385db1c865",
-  "root": "美丽武器V8.1_完整包",
-  "launcher": "美丽武器V8.1.exe",
-  "extensionVersion": "8.1.0",
-  "notes": "模板区移到左侧素材导入下方；服务状态、设置和模式切换集中右上角；EXE 使用软件头像图标。V8.0 用户可直接更新，已有 V8.0 助手无需重载。保留旧目录、模板、素材、设置与待播任务。从 V7.1.x 升级后需加载包内 V8 助手才能使用送礼监听。送礼监听的真实直播现场验收仍未完成，不宣称零漏单。"
+  "version": "8.1.1",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.1/BeautyWeapon-v8.1.1-windows-x64.zip",
+  "bytes": 186302299,
+  "sha256": "30f11f7ae22328a984914f97e36d0fe3da008c1f8c81f8e422d5bc9c0cac94c5",
+  "root": "美丽武器V8.1.1_完整包",
+  "launcher": "美丽武器V8.1.1.exe",
+  "extensionVersion": "8.1.1",
+  "notes": "修复常见延后打开主页导致送礼任务失败的问题，保留原始点击与账号绑定，增加旧助手检测及新版助手文件夹入口。更新程序后必须加载 V8.1.1 网页助手、禁用旧助手并刷新直播平台。保留旧目录、模板、素材、设置和任务。无法证明身份时仍暂停；无记录编号/虚拟列表仍可能漏单，真实直播现场待复测。"
 }
