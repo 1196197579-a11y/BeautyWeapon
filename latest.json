@@ -1,11 +1,11 @@
 {
   "app": "BeautyWeapon",
-  "version": "8.1.3",
-  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.3/BeautyWeapon-v8.1.3-windows-x64.zip",
-  "bytes": 187568831,
-  "sha256": "54c18f779efdf73ae7051df1348b89c5b99881355ed2c03afe7f393c40501d5b",
-  "root": "美丽武器V8.1.3_完整包",
-  "launcher": "美丽武器V8.1.3.exe",
-  "extensionVersion": "8.1.3",
-  "notes": "新增桌面读取失败日志，记录具体页面校验条件、头像候选与加载状态、助手通信错误、任务编号及临时标签页清理结果；支持手动读取失败记录、旧任务日志导出和离线诊断缓冲。此版用于定位现场故障，不宣称已经修复真实直播合成问题。更新后加载 V8.1.3 网页助手，禁用旧助手并刷新平台。保留旧版、素材、模板、设置与历史任务，不删除用户文件。"
+  "version": "8.1.4",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.4/BeautyWeapon-v8.1.4-windows-x64.zip",
+  "bytes": 198180795,
+  "sha256": "d29f8444917da67a46f72eaa2b6748733ac0b404b39050f60f7bab037ca33779",
+  "root": "美丽武器V8.1.4_完整包",
+  "launcher": "美丽武器V8.1.4.exe",
+  "extensionVersion": "8.1.4",
+  "notes": "修复用户失败日志确认的 canonical/og:url 缺失导致无法合成：改用原送礼账号、每轮专属任务标记、稳定主页昵称及唯一关联头像联合验证；公开账号信息存在冲突时继续拦截。统一读取文字和图片 Emoji，保留肤色、旗帜、组合符号，增加离线彩色表情字体；预览及真实 FFmpeg 图层均验证。保留现有模板、素材、随机制片、手动读取/播放、队列、设置和旧版。更新后必须加载 V8.1.4 网页助手并刷新平台，然后可重试已有任务；真实直播现场仍需复验，不承诺零漏单。"
 }
