@@ -41,7 +41,7 @@
   if(enabled&&profile(url)&&Date.now()>trustedUntil){notice();return null;}
   return Reflect.apply(originalOpen,this,[url,...rest]);
  };
- document.addEventListener('click',event=>{if(event.isTrusted){trustedUntil=Date.now()+5000;for(const s of sessions.values())finish(s,'人工点击打断了自动身份获取；未混用用户资料，请重试');}else if(context)event.preventDefault();},true);
+ document.addEventListener('click',event=>{if(event.isTrusted){trustedUntil=Date.now()+5000;for(const s of sessions.values())finish(s,'人工点击打断了自动身份获取；未混用用户资料，请重试');}},true);
  document.addEventListener('BW8_LISTEN_STATE',e=>{enabled=!!e.detail;if(!enabled)for(const s of sessions.values())finish(s,'监听已关闭，未继续获取身份');});
  window.__BW811_CAPTURE__={protocol:'causal-v1',capture(input){
   if(sessions.size||sessions.has(input.token))return Promise.resolve({error:'另一条送礼点击仍在获取地址，请稍后重试'});
