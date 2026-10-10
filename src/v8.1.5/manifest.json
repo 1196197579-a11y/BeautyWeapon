@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "美丽武器｜抖音网页助手 V8.1.5",
+  "version": "8.1.5",
+  "description": "读取当前抖音用户主页的头像和昵称，发送到美丽武器 V8.1.5 自动准备回馈视频。",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "alarms",
+    "webNavigation",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://douyin.com/*",
+    "https://*.douyin.com/*",
+    "http://127.0.0.1:38560/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "美丽武器 V8.1.5 网页助手"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://anchor.douyin.com/*"
+      ],
+      "js": [
+        "gift-capture.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://anchor.douyin.com/*"
+      ],
+      "js": [
+        "gift-dom.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://douyin.com/*",
+        "https://*.douyin.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
