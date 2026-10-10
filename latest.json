@@ -1,11 +1,11 @@
 {
   "app": "BeautyWeapon",
-  "version": "8.1.2",
-  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.2/BeautyWeapon-v8.1.2-windows-x64.zip",
-  "bytes": 186928001,
-  "sha256": "6f848321bfdb448021ea8474191f324094ab250e0ff15df38ddfca73b701e3ce",
-  "root": "美丽武器V8.1.2_完整包",
-  "launcher": "美丽武器V8.1.2.exe",
-  "extensionVersion": "8.1.2",
-  "notes": "修复昵称图片表情漏读引发头像关联失败；完善主页头像区域识别及重复节点处理，标签页操作临时失败限时重试，重启清空当前头像、昵称和手动输入并拒绝旧读取。更新程序后必须加载 V8.1.2 网页助手、禁用旧助手并刷新直播平台。保留旧目录、模板、素材、设置和任务。无法证明身份时仍暂停；无记录编号/虚拟列表仍可能漏单，真实直播现场待复测。"
+  "version": "8.1.3",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.3/BeautyWeapon-v8.1.3-windows-x64.zip",
+  "bytes": 187568831,
+  "sha256": "54c18f779efdf73ae7051df1348b89c5b99881355ed2c03afe7f393c40501d5b",
+  "root": "美丽武器V8.1.3_完整包",
+  "launcher": "美丽武器V8.1.3.exe",
+  "extensionVersion": "8.1.3",
+  "notes": "新增桌面读取失败日志，记录具体页面校验条件、头像候选与加载状态、助手通信错误、任务编号及临时标签页清理结果；支持手动读取失败记录、旧任务日志导出和离线诊断缓冲。此版用于定位现场故障，不宣称已经修复真实直播合成问题。更新后加载 V8.1.3 网页助手，禁用旧助手并刷新平台。保留旧版、素材、模板、设置与历史任务，不删除用户文件。"
 }
