@@ -1,11 +1,11 @@
 {
   "app": "BeautyWeapon",
-  "version": "8.1.4",
-  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.4/BeautyWeapon-v8.1.4-windows-x64.zip",
-  "bytes": 198180795,
-  "sha256": "d29f8444917da67a46f72eaa2b6748733ac0b404b39050f60f7bab037ca33779",
-  "root": "美丽武器V8.1.4_完整包",
-  "launcher": "美丽武器V8.1.4.exe",
-  "extensionVersion": "8.1.4",
-  "notes": "修复用户失败日志确认的 canonical/og:url 缺失导致无法合成：改用原送礼账号、每轮专属任务标记、稳定主页昵称及唯一关联头像联合验证；公开账号信息存在冲突时继续拦截。统一读取文字和图片 Emoji，保留肤色、旗帜、组合符号，增加离线彩色表情字体；预览及真实 FFmpeg 图层均验证。保留现有模板、素材、随机制片、手动读取/播放、队列、设置和旧版。更新后必须加载 V8.1.4 网页助手并刷新平台，然后可重试已有任务；真实直播现场仍需复验，不承诺零漏单。"
+  "version": "8.1.5",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.5/BeautyWeapon-v8.1.5-windows-x64.zip",
+  "bytes": 198875332,
+  "sha256": "f7a22e288a4d7f1a51c820798878caa5718a02478d9752cd7ec26a62c72eeee0",
+  "root": "美丽武器V8.1.5_完整包",
+  "launcher": "美丽武器V8.1.5.exe",
+  "extensionVersion": "8.1.5",
+  "notes": "修复实际日志确认的合成超时：渐显仅处理首秒透明通道，进程退出有界、无进度可终止，增加合成进度与停止任务。每次启动新场次统计归零，旧任务和成片留在设置的历史记录；浏览器未提交的旧礼物也归入历史。稳定空礼物列表的首条新增记录可捕获。就绪后普通/直播模式立即播放变鲜绿；日志工具与场次归档移到设置。保留身份验证、Emoji、随机模板、手动合成/播放和旧版。更新后需加载 V8.1.5 Edge 助手并刷新平台。实际三套模板自测成功；真实直播仍需复验，不承诺零漏单。"
 }
