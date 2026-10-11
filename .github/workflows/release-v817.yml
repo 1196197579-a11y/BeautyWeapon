@@ -1,0 +1,49 @@
+name: Package BeautyWeapon V8.1.7
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/v8.1.7/**'
+      - '.github/workflows/release-v817.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: beautyweapon-v817-release
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble verified public package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          Invoke-WebRequest 'https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.6/BeautyWeapon-v8.1.6-windows-x64.zip' -OutFile base.zip
+          python release/v8.1.7/assemble.py base.zip release/v8.1.7/patch.zip assembled
+          if($LASTEXITCODE -ne 0){throw 'Assembly verification failed'}
+      - name: Upload V8.1.7 release without changing Settings channel
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference='Stop'
+          gh release view v8.1.7 --json tagName *> $null
+          if($LASTEXITCODE -ne 0){
+            gh release create v8.1.7 assembled/BeautyWeapon-v8.1.7-windows-x64.zip --title '美丽武器 V8.1.7' --notes-file release/v8.1.7/release-notes.md --latest=false
+            if($LASTEXITCODE -ne 0){throw 'Release upload failed'}
+          } else {
+            $release=gh release view v8.1.7 --json assets | ConvertFrom-Json
+            $expected=Get-Content assembled/release-info-v8.1.7.json -Raw | ConvertFrom-Json
+            $asset=$release.assets | Where-Object name -eq 'BeautyWeapon-v8.1.7-windows-x64.zip'
+            if(-not $asset -or $asset.size -ne $expected.bytes -or $asset.digest -ne ('sha256:'+$expected.sha256)){throw 'Existing asset differs; refusing to overwrite'}
+          }
+          Copy-Item assembled/release-info-v8.1.7.json release-info-v8.1.7.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add release-info-v8.1.7.json
+          git diff --cached --quiet
+          if($LASTEXITCODE -ne 0){git commit -m 'Record verified V8.1.7 release metadata';git push origin HEAD:main;if($LASTEXITCODE -ne 0){throw 'Metadata publish failed'}}
+          Write-Output 'Release uploaded; latest.json intentionally awaits Settings upgrade validation.'
