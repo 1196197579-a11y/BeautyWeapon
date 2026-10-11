@@ -1,11 +1,11 @@
 {
   "app": "BeautyWeapon",
-  "version": "8.1.6",
-  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.6/BeautyWeapon-v8.1.6-windows-x64.zip",
-  "bytes": 199572996,
-  "sha256": "2fae8b3a06d16863f2a8cc0138d3c77b2db212a28877ed80e58a2cb10547ad28",
-  "root": "美丽武器V8.1.6_完整包",
-  "launcher": "美丽武器V8.1.6.exe",
-  "extensionVersion": "8.1.6",
-  "notes": "仅修补空礼物区域出现首条记录的捕获判定：提前观察已打开的空区域，并核验第一条记录的真实插入；覆盖列表容器晚出现及首条快速到来的情况。后续礼物判定、用户绑定、资料读取、随机模板、合成与播放逻辑保持 V8.1.5 原样。直播模式输出按钮改成与普通模式相同的鲜红色；素材按钮改为“导入视频”“导入图片”。更新后必须加载 V8.1.6 网页助手并刷新直播平台。受控 Edge 与真实 FFmpeg 自测通过，真实直播仍需复验，不承诺零漏单。"
+  "version": "8.1.7",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.7/BeautyWeapon-v8.1.7-windows-x64.zip",
+  "bytes": 202951302,
+  "sha256": "f9100473d6dda33f5c11a49247aeb45f56cc836c81bec43f77b090500369b3b6",
+  "root": "美丽武器V8.1.7_完整包",
+  "launcher": "美丽武器V8.1.7.exe",
+  "extensionVersion": "8.1.7",
+  "notes": "V8.1.7：手动打开透明输出、桌面拖动虚线框、新输出图标；保留并恢复旧模板及效果；主页备用自动合成；隐藏合成黑框；合成中短文字与绿色播放按钮；退出主软件清理所属输出和后台。首次启动会恢复旧配置，请等待模板检查完成。 设置点击“检查更新”后自动下载，在空闲时自动切换；更新后加载 V8.1.7 网页助手并停用旧助手。"
 }
