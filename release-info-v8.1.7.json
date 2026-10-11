@@ -1,0 +1,11 @@
+{
+  "app": "BeautyWeapon",
+  "version": "8.1.7",
+  "url": "https://github.com/1196197579-a11y/BeautyWeapon/releases/download/v8.1.7/BeautyWeapon-v8.1.7-windows-x64.zip",
+  "bytes": 202951269,
+  "sha256": "271990da6e027c7cbc51be753011579405adc744c7c9982b48781eddf0fc579d",
+  "root": "美丽武器V8.1.7_完整包",
+  "launcher": "美丽武器V8.1.7.exe",
+  "extensionVersion": "8.1.7",
+  "notes": "V8.1.7：手动打开透明输出、桌面拖动虚线框、新输出图标；保留并恢复旧模板及效果；主页备用自动合成；隐藏合成黑框；合成中短文字与绿色播放按钮；退出主软件清理所属输出和后台。首次启动会恢复旧配置，请等待模板检查完成。"
+}
