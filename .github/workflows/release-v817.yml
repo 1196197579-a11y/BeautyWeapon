@@ -35,10 +35,17 @@ jobs:
             gh release create v8.1.7 assembled/BeautyWeapon-v8.1.7-windows-x64.zip --title '美丽武器 V8.1.7' --notes-file release/v8.1.7/release-notes.md --latest=false
             if($LASTEXITCODE -ne 0){throw 'Release upload failed'}
           } else {
-            $release=gh release view v8.1.7 --json assets | ConvertFrom-Json
+            $release=gh api repos/1196197579-a11y/BeautyWeapon/releases/tags/v8.1.7 | ConvertFrom-Json
             $expected=Get-Content assembled/release-info-v8.1.7.json -Raw | ConvertFrom-Json
             $asset=$release.assets | Where-Object name -eq 'BeautyWeapon-v8.1.7-windows-x64.zip'
-            if(-not $asset -or $asset.size -ne $expected.bytes -or $asset.digest -ne ('sha256:'+$expected.sha256)){throw 'Existing asset differs; refusing to overwrite'}
+            if(-not $asset){throw 'Existing release asset is missing'}
+            if($asset.size -ne $expected.bytes -or $asset.digest -ne ('sha256:'+$expected.sha256)){
+              $channel=Invoke-RestMethod 'https://raw.githubusercontent.com/1196197579-a11y/BeautyWeapon/main/latest.json'
+              $previous=Get-Content release-info-v8.1.7.json -Raw | ConvertFrom-Json
+              if([version]$channel.version -ge [version]'8.1.7' -or $asset.digest -ne ('sha256:'+$previous.sha256)){throw 'Candidate is live or differs from prior metadata; refusing overwrite'}
+              gh release upload v8.1.7 assembled/BeautyWeapon-v8.1.7-windows-x64.zip --clobber
+              if($LASTEXITCODE -ne 0){throw 'Candidate asset update failed'}
+            }
           }
           Copy-Item assembled/release-info-v8.1.7.json release-info-v8.1.7.json
           git config user.name 'github-actions[bot]'
